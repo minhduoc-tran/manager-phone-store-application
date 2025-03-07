@@ -1,7 +1,11 @@
 package com.backend.models;
 
+import io.micrometer.core.instrument.binder.netty4.NettyAllocatorMetrics;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -10,7 +14,6 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_role")
@@ -34,3 +37,4 @@ public class RoleEntity extends  BaseEntity implements Serializable {
     private Set<RoleHasPermission> permissions = new HashSet<>();
 
 }
+

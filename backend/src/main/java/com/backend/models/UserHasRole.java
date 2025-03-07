@@ -15,13 +15,13 @@ import java.io.Serializable;
 public class UserHasRole extends  BaseEntity implements Serializable {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id" )
-    private UserEntity user;
+    @JoinColumn(name = "user_id")
+    private  UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "role_id")

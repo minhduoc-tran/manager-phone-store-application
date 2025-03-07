@@ -19,7 +19,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_user")
-public class UserEntity extends  BaseEntity  implements Serializable{
+public class UserEntity extends  BaseEntity  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,13 +30,13 @@ public class UserEntity extends  BaseEntity  implements Serializable{
     private String email;
 
     @Column(name = "user_name", length = 255)
-    private  String userName;
+    private String userName;
 
     @Column(name = "password", length = 255)
-    private  String password;
+    private String password;
 
     @Column(name = "address", length = 255)
-    private  String address;
+    private String address;
 
     @Enumerated(EnumType.STRING)
     @JdbcTypeCode(SqlTypes.NAMED_ENUM)
@@ -52,10 +52,10 @@ public class UserEntity extends  BaseEntity  implements Serializable{
     private Date birthDay;
 
     @Column(name = "image_avatar_url", length = 255)
-    private  String imageAvatarUrl;
+    private String imageAvatarUrl;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<UserHasRole> users = new HashSet<>();
+    private Set<UserHasRole> roles = new HashSet<>();
 }
 
 

@@ -15,11 +15,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_role_has_permission")
-public class RoleHasPermission  extends BaseEntity implements Serializable {
+public class RoleHasPermission extends BaseEntity implements Serializable {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne
