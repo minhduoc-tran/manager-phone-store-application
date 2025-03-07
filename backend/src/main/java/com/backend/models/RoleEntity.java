@@ -27,10 +27,10 @@ public class RoleEntity extends  BaseEntity implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<UserHasRole> users = new HashSet<>();
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<UserHasRole> user = new HashSet<>();
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<RoleHasPermission> roles = new HashSet<>();
+    private Set<RoleHasPermission> permissions = new HashSet<>();
 
 }

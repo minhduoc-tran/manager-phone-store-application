@@ -1,9 +1,6 @@
 package com.backend.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -16,9 +13,15 @@ import java.io.Serializable;
 @Builder
 @Table(name = "tb_user_has_role")
 public class UserHasRole extends  BaseEntity implements Serializable {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private  UserEntity user;
+    @JoinColumn(name = "user_id" )
+    private UserEntity user;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
