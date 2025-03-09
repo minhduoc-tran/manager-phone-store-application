@@ -2,6 +2,7 @@ package com.backend.dto.request;
 
 import com.backend.common.Gender;
 import com.backend.common.UserStatus;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,12 +10,13 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Getter
 @ToString
-public class UserRequest {
+public class UserRequest  implements Serializable {
 
     @NotNull(message = "email must be not null")
     @NotBlank(message = "email must be not blank")
@@ -30,6 +32,12 @@ public class UserRequest {
     private UserStatus status;
     private Date birthDay;
     private String imageAvatarUrl;
+
+    @Valid
+    private RoleRequest role;
+
+    @Valid
+    private BranchRequest branch;
 
 
 }

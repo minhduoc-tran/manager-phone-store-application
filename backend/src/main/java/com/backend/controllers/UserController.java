@@ -40,16 +40,17 @@ public class UserController {
         }
     }
 
-//    @PostMapping("/add")
-//    public Response<UserResponse> createUser(@Valid @RequestBody UserRequest user){
-//        try{
-//
-//        }catch (InvalidDataException ex){
-//
-//
-//        }
-//
-//    }
+    @PostMapping("/add")
+    public Response<UserResponse> createUser(@Valid @RequestBody UserRequest user){
+        try{
+
+            return Response.success("Create user successfully", null);
+        }catch (InvalidDataException ex){
+            return Response.error(HttpStatus.NOT_FOUND.value(), ex.getMessage());
+
+        }
+
+    }
 
 }
 

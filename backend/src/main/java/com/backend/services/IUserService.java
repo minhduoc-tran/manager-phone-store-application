@@ -9,4 +9,5 @@ public interface IUserService {
     UserResponse findByEmail(String email);
 
     void delete(Long id);
+
 }
