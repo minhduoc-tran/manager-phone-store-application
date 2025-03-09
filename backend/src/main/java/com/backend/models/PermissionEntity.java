@@ -1,6 +1,5 @@
 package com.backend.models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 

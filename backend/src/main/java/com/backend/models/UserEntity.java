@@ -54,6 +54,12 @@ public class UserEntity extends  BaseEntity  implements Serializable {
     @Column(name = "image_avatar_url", length = 255)
     private String imageAvatarUrl;
 
+
+    @ManyToOne
+    @JoinColumn(name = "branch_id")
+    private BranchEntity branch;
+
+
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<UserHasRole> roles = new HashSet<>();
 }
